@@ -1,5 +1,5 @@
 const { MessageEmbed, MessageActionRow, MessageSelectMenu,MessageButton } = require("discord.js");
-const axiosr = require('axiosr');
+const axios = require('axios');
 module.exports = {
     name:"eval",
     run(client, message, args){

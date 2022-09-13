@@ -70,6 +70,20 @@ client.on("messageCreate", (message) => {
         message.reply(`ERROR : \`${e}\``)
     }
     if(command == "test"){return message.channel.send("Test Successfully Worked")}
+    let iFilter = i => i.user.id === "952940471368450068";
+
+    let collector = message.createMessageComponentCollector({ filter: iFilter, time: 3600000 })
+        
+    collector.on("collect", async(i) => {
+        if(i.customId === "acp"){
+            i.reply("bb :(").then(setTimeout(function(){
+                process.exit(0);
+            },3000))
+        
+        } else if (i.customId === "decline"){
+            i.reply("İptal Edildi.")
+        }
+    })
 
 });
 
